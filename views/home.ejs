@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <title>Crescendo Music</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #ffffff;
+  }
+  p {font-size: 16px;}
+  margin {margin-bottom: 45px;}
+  .bg-1 { 
+	background: #00467F;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url("images/music3.jpg");
+  }
+  .bg-2 { 
+    background-color: #47476b; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #d1d1e0; /* Light Blue */
+    color: #000000;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .animate-charcter
+{
+   text-transform: capitalize;
+  background-image: linear-gradient(
+    -250deg,
+    #00467F 0%,
+    #44107a 29%,
+    #009999 67%,
+    #00cc99 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+  display: inline-block;
+      font-size: 130px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 100% center;
+  }
+}
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing:4px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  
+ body {font-family: Arial, Helvetica, sans-serif;}
+  
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+  </style>
+ </head>
+
+ <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <li class="active"><a href=/home>Home</a></li>
+	</div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="portfolio">Portfolio</a></li>
+		<li><a href="reviews">Reviews</a></li>
+        <li><a href="feedback">Submit a Feedback</a></li>
+		<% if(session.loggedin) {%>
+		<li><a href="booking">Make a Booking</a></li>
+		<% } else { %>
+		<li><a href="login">Make a booking</a></li>
+		<% } %>
+	</ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <div class="row">
+  <div class="col-md-12 text-center">
+  <h3 class="animate-charcter"> Crescendo Music</h3>
+  </div>
+</div>
+  <h3>Bring Music to Your Life</h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Your personal music lessons to ensure the best experience for you and your loved ones.</h3>
+  <p>- Dedicated and professional music instructor</p>
+  <p>- Location flexibility</p>
+  <p>- Customisable schedule</p>
+  <p>- Personalised lesson plan</p>
+  <p>All ages and skills level are welcome</p>
+  <h3 class="margin"> </h3>
+  <a href="getintouch" class="btn-lg btn-primary active">Get In Touch >></a>
+  
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Lessons Offered</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <a href="https://www.pianoemporium.com/10-benefits-playing-piano/#:~:text=Regular%20piano%20playing%20offers%20different,pressure%20and%20increase%20immune%20response.">
+	  <p>Piano Lesson</p>
+	  <img src="images/pianolesson.jpg" class="img-responsive margin" style="width:100%" alt="Piano Lesson"> </a>
+    </div>
+    <div class="col-sm-4"> 
+      <p>Guitar Lesson</p>
+	  <a href="https://www.prnewswire.com/news-releases/guitar-isnt-dead-research-shows-learning-to-play-helps-us-live-better-lives-300731477.html">
+      <img src="images/guitarlesson.jpg" class="img-responsive margin" style="width:100%" alt="Guitar Lesson"> </a>
+    </div>
+	 <div class="col-sm-4"> 
+      <p>Music Theory and Audio Production</p>
+	  <a href="https://abbeyroadinstitute.co.uk/blog/music-theory-makes-better-music-producers/">
+      <img src="images/audioproduction.jpg" class="img-responsive margin" style="width:100%" alt="Music Theory and Audio Production"> </a>
+    </div>
+    
+  </div>
+</div>                                                           
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+<p><a href="https://www.facebook.com/messages/t/100008585108007">Contact Crescendo Music Facebook Messenger</a></p> 
+</footer>
+
+</body>
+</html>

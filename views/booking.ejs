@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <title>Crescendo Music</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/smart-forms.css">
+  <link rel="stylesheet" href="css/smart-themes/red.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+
+ .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing:4px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  
+@media screen and (max-width: 767px) {
+    .history-wrapper:after,
+    .year,
+    .timeline-box:before {
+        display: none;
+    }
+    .history-wrapper {
+        padding: 0;
+    }
+    .history-wrapper .timeline-box:nth-child(2n),
+    .history-wrapper .timeline-box:nth-child(2n + 1) {
+        padding: 0 15px;
+    }
+    .history-wrapper .timeline-box:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .timeline-box .content {
+        text-align: center;
+    }
+    .timeline-box:nth-child(2n):after,
+    .timeline-box:nth-child(2n + 1):after {
+        display: none;
+    }
+}
+
+.mb-1-6, .my-1-6 {
+    margin-bottom: 1.6rem;
+}
+
+body {
+  background-color: #5c5c8a;
+}
+
+  </style>
+ </head>
+
+ <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <li class="active"><a href=/home>Home</a></li>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="portfolio">Portfolio</a></li>
+		<li><a href="reviews">Reviews</a></li>
+        <li><a href="feedback">Submit a Feedback</a></li>
+        <li><a href="booking">Make a Booking</a></li>
+		<li><a href="logout">Log Out</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+	<form action="/booking" method="POST" class="contact-form form-validate" novalidate="novalidate">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+              <div class="col-md-12 text-center">
+              <img src="images/scheduling.jpg"
+                alt="Scheduling" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Manage Your Booking Form</h3>
+				<h3 class="form-check-label">Use the form below to propose changes to your current time slot.</h3>
+			
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+					  <label class="form-label" for="first_name">Student First name</label>
+                      <input type="text" id="first_name" name="first_name" class="form-control form-control-lg" />
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+					  <label class="form-label" for="last_name">Student Last name</label>
+                      <input type="text" id="last_name" name="last_name" class="form-control form-control-lg" />
+                      </div>
+                  </div>
+                </div>
+
+				<div class="col-md-6 mb-4">
+                    <div class="form-outline">
+					<label class="form-label" for="proposed_day">Proposed Booking Day and Time:</label>
+                    <select class="form-control" id="proposed_day" name="proposed_day">
+							<option>Select a day</option>
+							<option>Monday</option>
+							<option>Tuesday</option>
+							<option>Wednesday</option>
+							<option>Thursday</option>
+							<option>Friday</option>
+							<option>Saturday</option>
+							<option>Sunday</option>
+					</select>
+
+					<select class="form-control" id="proposed_time" name="proposed_time">
+							<option>Select a time</option>
+							<option>15:00</option>
+							<option>16:00</option>
+							<option>17:00</option>
+							<option>18:00</option>
+							<option>19:00</option>
+					</select>
+					<input type="date" id="starting_date" name="starting_date" class="form-control form-control-lg" placeholder="Enter a starting date - Format: YYYY-MM-DD"/>
+                      </div>
+				</div>
+                </div>
+
+				<div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+					  <label class="form-label" for="email">Email</label>
+                      <input type="text" id="email" name="email" class="form-control form-control-lg" />
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+					  <label class="form-label" for="phone">Phone</label>
+                      <input type="text" id="phone" name="phone" class="form-control form-control-lg" />
+                      </div>
+                  </div>
+                </div>
+																		  
+						<div class="form-outline mb-4">
+						<label class="form-label" for="notes">Notes:</label>
+						<input type="text" id="notes" name="notes" class="form-control form-control-lg" />
+						</div>
+
+						<div class="col-sm-12 mb-3">
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                        </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</section>
+ </body>
+</html>

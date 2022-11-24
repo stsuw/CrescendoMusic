@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<head>
+
+        <title>Crescendo Music - My Booking</title>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link rel="stylesheet" href="css/smart-forms.css">
+		<link rel="stylesheet" href="css/smart-themes/red.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+</head>
+
+<style>
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+
+ .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+    letter-spacing:4px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  
+@media screen and (max-width: 767px) {
+    .history-wrapper:after,
+    .year,
+    .timeline-box:before {
+        display: none;
+    }
+    .history-wrapper {
+        padding: 0;
+    }
+    .history-wrapper .timeline-box:nth-child(2n),
+    .history-wrapper .timeline-box:nth-child(2n + 1) {
+        padding: 0 15px;
+    }
+    .history-wrapper .timeline-box:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .timeline-box .content {
+        text-align: center;
+    }
+    .timeline-box:nth-child(2n):after,
+    .timeline-box:nth-child(2n + 1):after {
+        display: none;
+    }
+}
+
+.mb-1-6, .my-1-6 {
+    margin-bottom: 1.6rem;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+#divGet {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+#divGet td, #divGet th {
+  border: 2px solid #ddd;
+  text-align: left;
+  padding: 9px;
+  color: #5c5c8a;
+}
+
+#divGet tr:nth-child(even){background-color: #black;}
+
+#divGet tr:hover {background-color: #ddd;}
+
+#divGet th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+
+</style>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <li class="active"><a href=/home>Home</a></li>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="portfolio">Portfolio</a></li>
+		<li><a href="reviews">Reviews</a></li>
+        <li><a href="feedback">Submit a Feedback</a></li>
+        <li><a href="booking">Make a Booking</a></li>
+		<li><a href="logout">Log Out</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>              
+			  <div id="divGet">
+               <table>
+                              <tr>
+                                    <th>First_Name</th>
+                                    <th>Last_Name</th>
+									<th>Email</th>
+									<th>DOB</th>
+                                    <th>Phone</th>
+                                    <th>Lessons_Enrolled</th>
+									<th>Lesson_Type</th>
+
+                              </tr>                   
+
+                             <% if (mybookingdata.length !=0) {var i=1; mybookingdata.forEach( function(data) {
+                              %>
+                              <tr>
+                                    <td><%=data.first_name %></td>
+                                    <td><%=data.last_name %></td>
+ 								    <td><%=data.email %></td>
+									<td><%=data.dob %></td>
+                                    <td><%=data.phone %></td>
+									<td><%=data.lessons_enrolled %></td>
+									<td><%=data.lesson_type %></td>
+
+ 							  </tr>
+                              &<% i++; }) %> <%}%>                          
+
+               </table>
+
+               </div>
+
+               
+
+</body>
+
+</html> 

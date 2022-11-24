@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+
+        <title>Feedback List</title>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+               <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css" /> 
+               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<style>
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+	
+#divGet {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+#divGet td, #divGet th {
+  border: 2px solid #ddd;
+  text-align: left;
+  padding: 9px;
+}
+
+#divGet tr:nth-child(even){background-color: #f2f2f2;}
+
+#divGet tr:hover {background-color: #ddd;}
+
+#divGet th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+
+</style>
+
+<body>
+               <div id="divGet">
+               <table>
+                              <tr>
+                                    <th>Message_ID</th>
+                                    <th>First_Name</th>
+									<th>Last_Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Interest</th>
+									<th>Lesson_Type</th>
+									<th>Message</th>
+									<th>Message_At</th>
+                              </tr>                   
+
+                              <% if (getintouchData.length !=0) {var i=1; getintouchData.forEach( function(data) {
+                              %>
+                              <tr>
+                                    <td><%=data.message_id %></td>
+                                    <td><%=data.first_name %></td>
+                                    <td><%=data.last_name %></td>
+									<td><%=data.email %></td>
+                                    <td><%=data.phone %></td>
+                                    <td><%=data.interest %></td>
+									<td><%=data.lesson_type %></td>
+									<td><%=data.message %></td>
+									<td><%=data.message_at %></td>
+ 							  </tr>
+                              <% i++; }) %> <%}%>                          
+
+               </table>
+
+               </div>
+
+               
+
+</body>
+
+</html> 
